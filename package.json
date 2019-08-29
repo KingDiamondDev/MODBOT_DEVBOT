@@ -1,0 +1,16 @@
+{
+  "name": "modbot",
+  "version": "2.0.1",
+  "description": "The new and improved version of the old ModBot",
+  "main": "bot.js",
+  "scripts": {
+    "test": "!test"
+  },
+  "author": "KingDiamondDev",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "discord.js": "^11.5.1",
+    "nodemon": "^1.19.1"
+  }
+}
