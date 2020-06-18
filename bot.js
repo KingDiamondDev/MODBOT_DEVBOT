@@ -28,12 +28,19 @@ client.on("message", msg => {
           msg.delete();
           if (msg.content.toLowerCase().startsWith(prefix + "kick ")) {
           var mem = msg.mentions.members.first();
-          mem.kick().then(() => {
-                          msg.channel.send(mem.displayName + " has successfully been kicked by " + msg.author.username + "!");
-                          }).catch(e => {
-                                   msg.channel.send("An error occured!");
-                                   });
-          }
+
+        //Check if your bot can`t kick this user, so that show this error msg 
+        if(!mem.kickable) {
+            msg.channel.send('I have no permissions to kick this user');
+            return;
+        };
+
+        //If all steps are completed successfully try kick this user
+        mem.kick()
+            .then(() => console.log(`Kicked ${member.displayName}`))
+            .catch(console.error);
+    };
+    
           if (msg.content.toLowerCase().startsWith(prefix + "ban ")) {
           var mem = msg.mentions.members.first();
           var mc = msg.content.split(" ")[2];
