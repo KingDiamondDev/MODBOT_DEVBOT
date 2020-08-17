@@ -88,4 +88,4 @@ client.on("message", msg => {
           }
           });
 
-client.login("NTI5NDMyNjIyNzQ5NzEyMzg0.Xuu31Q.XztEzUaOXvUuuWEuLbRvJmI9ldo");
+client.login("BOT_TOKEN_HERE");
